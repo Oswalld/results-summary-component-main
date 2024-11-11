@@ -49,7 +49,14 @@ const textClass = computed(() => {
   return classes[props.category];
 });
 
+const iconPaths = {
+  reaction: new URL("../assets/images/icon-reaction.svg", import.meta.url).href,
+  memory: new URL("../assets/images/icon-memory.svg", import.meta.url).href,
+  verbal: new URL("../assets/images/icon-verbal.svg", import.meta.url).href,
+  visual: new URL("../assets/images/icon-visual.svg", import.meta.url).href,
+};
+
 const iconPath = computed(() => {
-  return `./src/assets/images/icon-${props.category.toLowerCase()}.svg`;
+  return iconPaths[props.category.toLowerCase()];
 });
 </script>
